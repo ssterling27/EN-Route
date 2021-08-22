@@ -1,2 +1,75 @@
+<!DOCTYPE html>
 
+<html>
 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EN-Route!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+
+  </head>
+  
+  <body>
+
+<!-- Navbar -->
+
+  
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <p class="title">
+        Documentation
+      </p>
+      <p class="subtitle">
+        Everything you need to <strong>create a website</strong> with Bulma
+      </p>
+    </div>
+  </section>
+
+  
+  <section id="jumbotron">
+    <div class="container is-widescreen">
+        <div class="notification is primary">EN-Route</div>
+      <p class="subtitle">Never run out of time to watch your favorite movies and shows again!</p>
+    </div>
+  </section>
+
+<!-- Search time to destination -->
+  <div class="column" id="searchTime"> 
+    <div class="column is-full">Search time to your destination</div>
+        <div class="buttons">
+        <button class="button is-link">Create Watchlist</button>
+        </div>
+  </div>
+
+<!-- Search for TV shows -->
+  <div class="columns" id="searchShows">
+     <div class="column is-half">Search for TV shows</div>
+      <div class="control">
+        <input type="text" class="input" id="showSearch" placeholder="Search by Show Name">
+      </div>
+        <div class="buttons">
+        <button class="button is-link" onclick="window.location.href='./search.html'" id="searchShow">Search</button>
+        </div>
+  </div>
+<!-- Search for Movies -->
+    <div class="columns" id="searchMovies">
+        <div class="column is-half">Search for Movies</div>
+        <div class="control">
+          <input type="text" class="input" id="movieSearch" placeholder="Search by Movie Name">
+        </div>
+            <div class="buttons">
+            <button class="button is-link" onclick="window.location.href='./search.html'" id="searchMovie">Search</button>
+            </div>
+    </div>
+    </div>
+
+  <!-- Watchlist preview -->
+  <div class="column" id="watchListPreview"> 
+    <div class="column is-full">Your Watchlist Preview</div>
+  </div>
+
+  <!-- Footer -->
+</body>
+</html>
