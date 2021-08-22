@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EN-Route Search</title>
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./bulma.css">
+  <style>
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .inputArea {
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="columns">
+  <div class="column">
+    <section class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          TV Search
+        </p>
+      </header>
+      <div class="card-content">
+        <section class="field">
+          <!-- <label class="label" for="showSearch">Search By Show Name</label> -->
+          <div class="control inputArea">
+            <input type="text" class="input" id="showSearch" placeholder="Search by Show Name">
+          </div>
+          <button class="button is-primary" id="searchShow">Search</button>
+        </section>
+      </div>
+    </section>
+    <section class="card">
+      <div class="card-content" id="showResults">
+    
+      </div>
+    </section>
+  </div>
+  <div class="column">
+    <section class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          Movie Search
+        </p>
+      </header>
+      <div class="card-content">
+        <section class="field">
+          <!-- <label class="label" for="showSearch">Search By Show Name</label> -->
+          <div class="control inputArea">
+            <input type="text" class="input" id="movieSearch" placeholder="Search by Movie Name">
+          </div>
+          <button class="button is-primary" id="searchMovie">Search</button>
+        </section>
+      </div>
+    </section>
+    <section class="card">
+      <div class="card-content" id="movieResults">
+    
+      </div>
+    </section>
+  </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./search.js"></script>
+</body>
+</html>
 
