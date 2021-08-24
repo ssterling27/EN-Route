@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./bulma.css">
+  <style>
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .inputArea {
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="columns">
+    <div class="column">
+      <section class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            Route Time Calculator
+          </p>
+        </header>
+        <div class="card-content">
+          <section class="field">
+            <!-- <label class="label" for="showSearch">Search By Show Name</label> -->
+            <div class="control inputArea">
+              <input type="text" class="input" id="startLocation" placeholder="Starting Location">
+            </div>
+            <div class="control inArea">
+              <input type="text" class="input" id="endLocation" placeholder="Ending Location">
+            </div>
+            <div class="control inArea">
+              <p id="routeTime"></p>
+            </div>
+            <button class="button is-primary" id="calculateRoute">Calculate</button>
+          </section>
+        </div>
+      </section>
+      <section class="card">
+        <div class="card-content" id="showResults">
+
+
+          <!-- <form>
+    <p>
+      <label for="name">From:</label>
+      <input type="text" name="name" id="from">
+      <label for="name">To:</label>
+      <input type="text" name="name" id="to">
+      <label for="name">Total Trip Time</label>
+      <input type="text" name="name" id="name">
+    </p>
+    <button id="search">Search</button>
+  </form>
+  <div id="route"></div> -->
+
+          <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+          <script src='traveltime.js'></script>
+</body>
+
+</html>
