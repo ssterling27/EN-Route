@@ -14,54 +14,101 @@
   <body>
 
 <!-- Navbar -->
+<nav class="navbar is-link" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+    </a>
 
-  
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      
+      <a class="navbar-item"><strong>EN</strong></a>
+      
+      <a class="navbar-item">Home</a>
+
+      <a class="navbar-item" href="watchlist.html">Watchlist</a>
+
+      <a class="navbar-item" href="search.html">Search</a>
+ </nav> 
+
   <section class="hero is-primary">
     <div class="hero-body">
-      <p class="title">
-        Documentation
-      </p>
-      <p class="subtitle">
-        Everything you need to <strong>create a website</strong> with Bulma
-      </p>
+      <p class="title">EN-Route</p>
+      <p class="subtitle">Never run out of time to watch your favorite movies and shows again!</p>
     </div>
   </section>
 
   
   <section id="jumbotron">
     <div class="container is-widescreen">
-        <div class="notification is primary">EN-Route</div>
-      <p class="subtitle">Never run out of time to watch your favorite movies and shows again!</p>
+        <div class="notification is primary"></div>
+      <p class="subtitle"></p>
     </div>
   </section>
 
 <!-- Search time to destination -->
   <div class="column" id="searchTime"> 
-    <div class="column is-full">Search time to your destination</div>
-        <div class="buttons">
-        <button class="button is-link">Create Watchlist</button>
-        </div>
+      <div class="box">
+        <div class="box has-text-centered">
+          <p class="title is-5">Calculate the time to your destination</p>
+          <div class="buttons">
+          <button class="button is-link">Create Watchlist</button>
+      </div>
   </div>
 
-<!-- Search for TV shows -->
-  <div class="columns" id="searchShows">
-     <div class="column is-half">Search for TV shows</div>
-      <div class="control">
-        <input type="text" class="input" id="showSearch" placeholder="Search by Show Name">
-      </div>
-        <div class="buttons">
-        <button class="button is-link" onclick="window.location.href='./search.html'" id="searchShow">Search</button>
-        </div>
-  </div>
-<!-- Search for Movies -->
-    <div class="columns" id="searchMovies">
-        <div class="column is-half">Search for Movies</div>
-        <div class="control">
-          <input type="text" class="input" id="movieSearch" placeholder="Search by Movie Name">
-        </div>
-            <div class="buttons">
-            <button class="button is-link" onclick="window.location.href='./search.html'" id="searchMovie">Search</button>
+  <div class="columns">
+    <div class="column">
+      <section class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            TV Search
+          </p>
+        </header>
+        <div class="card-content">
+          <section class="field">
+            <!-- <label class="label" for="showSearch">Search By Show Name</label> -->
+            <div class="control inputArea">
+              <input type="text" class="input" id="showSearch" placeholder="Search by Show Name">
             </div>
+            <button class="button is-primary" id="searchShow">Search</button>
+          </section>
+        </div>
+      </section>
+      <section class="card">
+        <div class="card-content" id="showResults">
+      
+        </div>
+      </section>
+    </div>
+    <div class="column">
+      <section class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            Movie Search
+          </p>
+        </header>
+        <div class="card-content">
+          <section class="field">
+            <!-- <label class="label" for="showSearch">Search By Show Name</label> -->
+            <div class="control inputArea">
+              <input type="text" class="input" id="movieSearch" placeholder="Search by Movie Name">
+            </div>
+            <button class="button is-primary" id="searchMovie">Search</button>
+          </section>
+        </div>
+      </section>
+      <section class="card">
+        <div class="card-content" id="movieResults">
+      
+        </div>
+      </section>
     </div>
     </div>
 
@@ -71,5 +118,13 @@
   </div>
 
   <!-- Footer -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>EN-Route</strong> Copyright &copy; Coding Prodigies
+      </p>
+    </div>
+  </footer>
+
 </body>
 </html>
