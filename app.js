@@ -12,6 +12,7 @@ document.getElementById('searchShow').addEventListener('click', event => {
   localStorage.setItem('savedShow', showSearchHome)
   // window.location.replace('./search.html')
   document.getElementById('showSearch').value = ''
+  location.href = "./search.html"
 })
 
 document.getElementById('searchMovie').addEventListener('click', event => {
@@ -21,4 +22,5 @@ document.getElementById('searchMovie').addEventListener('click', event => {
   localStorage.setItem('savedMovie', movieSearchHome)
   // window.location.replace('./search.html')
   document.getElementById('movieSearch').value = ''
+  location.href = "./search.html"
 })

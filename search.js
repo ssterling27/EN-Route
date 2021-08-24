@@ -1,7 +1,11 @@
 const localStorage = window.localStorage
 const savedMovie = (localStorage.getItem('savedMovie')) || ''
 const savedShow = (localStorage.getItem('savedShow')) || ''
-
+const removeChilds = (parent) => {
+  while (parent.lastChild) {
+    parent.removeChild(parent.lastChild);
+  }
+};
 const searchForMovie = () => {
 
   axios.get(`http://www.omdbapi.com/?apikey=trilogy&t=${movieSearch}`)
@@ -17,7 +21,7 @@ const searchForMovie = () => {
         movieImage = movie.Poster
       }
       const movieElem = document.createElement('div')
-      movieElem.classList = 'card'
+      movieElem.classList = 'card movieResult'
       movieElem.style = "width: 500px; border: 1px solid blue;"
       movieElem.innerHTML = `
         <div class="card-image">
@@ -88,6 +92,14 @@ if (savedMovie == '') {
   console.log('nothing here')
 } else {
   movieSearch = savedMovie
+  axios.get(`http://www.omdbapi.com/?apikey=trilogy&s=${movieSearch}&type=movie`)
+    .then(res => {
+      results = res.data.Search
+      results.forEach(result => {
+        movieSearch = result.Title
+        searchForMovie()
+      })
+    })
   searchForMovie()
   localStorage.setItem('savedMovie', '')
 }
@@ -102,12 +114,22 @@ if (savedShow == '') {
 
 document.getElementById('searchShow').addEventListener('click', event => {
   event.preventDefault()
+  removeChilds(showResults)
   showSearch = document.getElementById('showSearch').value
   searchForShow()
 })
 
 document.getElementById('searchMovie').addEventListener('click', event => {
   event.preventDefault()
+  removeChilds(movieResults)
   movieSearch = document.getElementById('movieSearch').value
-  searchForMovie()
+  axios.get(`http://www.omdbapi.com/?apikey=trilogy&s=${movieSearch}&type=movie`)
+    .then(res => {
+      results = res.data.Search
+      results.forEach(result => {
+        movieSearch = result.Title
+        searchForMovie()
+      })
+    })
 })
+
