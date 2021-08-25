@@ -1,38 +1,38 @@
-const localStorage = window.localStorage
-const savedTrip = (localStorage.getItem('savedTrip')) || ''
+// const localStorage = window.localStorage
+// const savedTrip = (localStorage.getItem('savedTrip')) || ''
 
-let minutes = ''
-let routeTime = ''
+// let minutes = ''
+// let routeTime = ''
 
-const getMinutes = () => {
-  var a = routeTime.split(':')
-  minutes = (+a[0]) * 60 + (+a[1])
-}
-console.log(minutes)
-document.getElementById('calculateRoute').addEventListener('click', event => {
-  event.preventDefault()
+// const getMinutes = () => {
+//   var a = routeTime.split(':')
+//   minutes = (+a[0]) * 60 + (+a[1])
+// }
+// console.log(minutes)
+// document.getElementById('calculateRoute').addEventListener('click', event => {
+//   event.preventDefault()
 
-  const startLocation = document.getElementById('startLocation').value
-  const endLocation = document.getElementById('endLocation').value
+//   const startLocation = document.getElementById('startLocation').value
+//   const endLocation = document.getElementById('endLocation').value
 
-  axios.get(`http://www.mapquestapi.com/directions/v2/route?key=AuAAUW4MFK4rMJMK3n9ulgMAPUlelbS7&from=${startLocation}&to=${endLocation}`)
-    .then(res => {
-      const trip = res.data
+//   axios.get(`http://www.mapquestapi.com/directions/v2/route?key=AuAAUW4MFK4rMJMK3n9ulgMAPUlelbS7&from=${startLocation}&to=${endLocation}`)
+//     .then(res => {
+//       const trip = res.data
 
-      document.getElementById('startLocation').innerHTML = ''
-      document.getElementById('endLocation').innerHTML = ''
+//       document.getElementById('startLocation').innerHTML = ''
+//       document.getElementById('endLocation').innerHTML = ''
 
-      routeTime = trip.route.formattedTime
-      getMinutes()
-      //  console.log(trip)
+//       routeTime = trip.route.formattedTime
+//       getMinutes()
+//       //  console.log(trip)
 
-      document.getElementById('routeTime').textContent = `${minutes} minutes`
-    })
-})
+//       document.getElementById('routeTime').textContent = `${minutes} minutes`
+//     })
+// })
 
 
 
-// travelTime >= watchTime
+// // travelTime >= watchTime
 
 
 
