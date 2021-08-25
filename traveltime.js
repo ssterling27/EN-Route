@@ -1,6 +1,15 @@
 const localStorage = window.localStorage
 const savedTrip = (localStorage.getItem('savedTrip')) || ''
+let minutes = ''
+let routeTime = ''
 
+const getMinutes = () => {
+  var a = routeTime.split(':')
+  minutes = (+a[0]) * 60 + (+a[1])
+}
+
+
+console.log(minutes)
 
 document.getElementById('calculateRoute').addEventListener('click', event => {
   event.preventDefault()
@@ -15,11 +24,11 @@ document.getElementById('calculateRoute').addEventListener('click', event => {
       document.getElementById('startLocation').innerHTML = ''
       document.getElementById('endLocation').innerHTML = ''
 
-      let tripTime = trip.route.formattedTime
-
+      routeTime = trip.route.formattedTime
+      getMinutes()
       //  console.log(trip)
 
-      document.getElementById('routeTime').textContent = `${tripTime}`
+      document.getElementById('routeTime').textContent = `${minutes} minutes`
     })
 })
 
