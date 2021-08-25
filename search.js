@@ -6,6 +6,8 @@ const removeChilds = (parent) => {
     parent.removeChild(parent.lastChild);
   }
 };
+let currentTrip = (localStorage.getItem('currentTrip')) || ''
+console.log(currentTrip)
 const searchForMovie = () => {
 
   axios.get(`http://www.omdbapi.com/?apikey=trilogy&t=${movieSearch}`)
@@ -24,7 +26,7 @@ const searchForMovie = () => {
       movieElem.classList = 'card movieResult'
       movieElem.style = "width: 500px; border: 1px solid blue;"
       movieElem.innerHTML = `
-        <div class="card-image">
+        <div class="card-image" id="${movieImage}">
           <figure class="image center">
             <img style="width:300px;" src="${movieImage}" alt="${movie.Title} Image">
           </figure>
@@ -36,7 +38,7 @@ const searchForMovie = () => {
           <p>Runtime: ${movie.Runtime}</p>
           <p>Genre: ${movie.Genre}</p>
           <p>Synopsis: ${movie.Plot}</p>
-          <button class="button is-primary" id="saveMovie">Add to List</button>
+          <button class="button is-primary saveMovie">Add to List</button>
         </div>
         `
       document.getElementById('movieResults').append(movieElem)
@@ -64,7 +66,7 @@ const searchForShow = () => {
         showElem.classList = 'card'
         showElem.style = "width: 500px; border: 1px solid blue;"
         showElem.innerHTML = `
-        <div class="card-image">
+        <div class="card-image" id="${showImage}">
           <figure class="image center">
             <img style="width:300px;" src="${showImage}" alt="${show.show.name} Image">
           </figure>
@@ -76,7 +78,7 @@ const searchForShow = () => {
           <p>Runtime: ${show.show.averageRuntime} minutes</p>
           <p>Genre: ${show.show.genres}</p>
           <p>Synopsis: ${show.show.summary}</p>
-          <button class="button is-primary" id="saveShow">Add to List</button>
+          <button class="button is-primary saveShow" id="saveShow">Add to List</button>
         </div>
         `
         document.getElementById('showResults').append(showElem)
@@ -132,4 +134,63 @@ document.getElementById('searchMovie').addEventListener('click', event => {
       })
     })
 })
+let mediaInfo = ''
+document.addEventListener('click', event => {
+  if (event.target.classList.contains('saveMovie')) {
+    // mediaStuff = event.target.parentNode.childNodes
+    title = event.target.parentNode.childNodes[3].innerText
+    // console.log(mediaStuff)
+    poster = event.target.parentNode.childNodes[1].id
+    poster.trim()
+    runtime = event.target.parentNode.childNodes[5].innerText
+    runtime = runtime.replace(/\D/g, '')
+    // console.log(runtime)
+    genre = event.target.parentNode.childNodes[7].innerText
+    synopsis = event.target.parentNode.childNodes[9].innerText
+    mediaInfo = {
+      'type': 'movie',
+      'title': title,
+      'poster': poster,
+      'runtime': runtime,
+      'genre': genre,
+      'synopsis': synopsis
+    }
+    // console.log(mediaInfo)
+    trip = JSON.parse(localStorage.getItem(`trip`))
+    thisTrip = trip[`${currentTrip}`]
+    thisTripMedia = thisTrip.media
+    // console.log(thisTripMedia)
+    thisTripMedia.push(mediaInfo)
+    localStorage.setItem(`trip`, JSON.stringify(trip))
 
+  }
+})
+
+document.addEventListener('click', event => {
+  if (event.target.classList.contains('saveShow')) {
+    console.log(event.target.parentNode.childNodes)
+    title = event.target.parentNode.childNodes[3].innerText
+    poster = event.target.parentNode.childNodes[1].id
+    runtime = event.target.parentNode.childNodes[5].innerText
+    runtime = runtime.replace(/\D/g, '')
+    genre = event.target.parentNode.childNodes[7].innerText
+    synopsis = `${event.target.parentNode.childNodes[9].innerText} ${event.target.parentNode.childNodes[10].innerText}`
+    mediaInfo = {
+      'type': 'show',
+      'originalRuntime': runtime,
+      'episodes': 1,
+      'title': title,
+      'poster': poster,
+      'runtime': runtime,
+      'genre': genre,
+      'synopsis': synopsis
+    }
+    // console.log(mediaInfo)
+    trip = JSON.parse(localStorage.getItem(`trip`))
+    thisTrip = trip[`${currentTrip}`]
+    thisTripMedia = thisTrip.media
+    // console.log(thisTripMedia)
+    thisTripMedia.push(mediaInfo)
+    localStorage.setItem(`trip`, JSON.stringify(trip))
+  }
+})
