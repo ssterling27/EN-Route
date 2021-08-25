@@ -21,7 +21,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// Define minutes and route time to convert formatted time (HH:MM:SS) to minutes only
+let minutes = ''
+let routeTime = ''
+
+// Function to convert formatted time (HH:MM:SS) to minutes only
+const getMinutes = () => {
+  var a = routeTime.split(':')
+  minutes = (+a[0]) * 60 + (+a[1])
+}
+console.log(minutes)
+//Calculate total time traveled between two locations
+document.getElementById('calculateRoute').addEventListener('click', event => {
+  event.preventDefault()
+
+  const startLocation = document.getElementById('startLocation').value
+  const endLocation = document.getElementById('endLocation').value
+
+  axios.get(`http://www.mapquestapi.com/directions/v2/route?key=AuAAUW4MFK4rMJMK3n9ulgMAPUlelbS7&from=${startLocation}&to=${endLocation}`)
+    .then(res => {
+      const trip = res.data
+
+      document.getElementById('startLocation').innerHTML = ''
+      document.getElementById('endLocation').innerHTML = ''
+
+      routeTime = trip.route.formattedTime
+      getMinutes()
+      //  console.log(trip)
+
+      document.getElementById('routeTime').textContent = `${minutes} minutes`
+    })
+})
+
+
 const localStorage = window.localStorage
+const savedTrip = (localStorage.getItem('savedTrip')) || ''
 const savedMovieSearch = localStorage.getItem('savedMovie') || ''
 const savedShowSearch = localStorage.getItem('savedShow') || ''
 let x = localStorage.getItem('x') || 0
