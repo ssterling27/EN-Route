@@ -148,7 +148,7 @@ document.addEventListener('click', event => {
     genre = event.target.parentNode.childNodes[7].innerText
     synopsis = event.target.parentNode.childNodes[9].innerText
     mediaInfo = {
-      'type': 'movie',
+      'type': 'Movie',
       'title': title,
       'poster': poster,
       'runtime': runtime,
@@ -176,7 +176,7 @@ document.addEventListener('click', event => {
     genre = event.target.parentNode.childNodes[7].innerText
     synopsis = `${event.target.parentNode.childNodes[9].innerText} ${event.target.parentNode.childNodes[10].innerText}`
     mediaInfo = {
-      'type': 'show',
+      'type': 'Show',
       'originalRuntime': runtime,
       'episodes': 1,
       'title': title,
