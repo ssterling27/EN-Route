@@ -15,11 +15,11 @@ document.getElementById('calculateRoute').addEventListener('click', event => {
       document.getElementById('startLocation').innerHTML = ''
       document.getElementById('endLocation').innerHTML = ''
 
-      // let tripTime = trip.route.formattedTime
+      let tripTime = trip.route.formattedTime
 
       //  console.log(trip)
 
-      document.getElementById('routeTime').textContent = `${trip.route.formattedTime}`
+      document.getElementById('routeTime').textContent = `${tripTime}`
     })
 })
 
