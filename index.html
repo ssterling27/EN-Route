@@ -7,34 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>EN-Route!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="assets/style.css">
 
   </head>
   
   <body>
 
 <!-- Navbar -->
+
 <nav class="navbar is-link" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
+    <a class="navbar-item">
     </a>
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <a role="button" class="navbar-burger is-active" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
   </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
+  <div id="navbarBasicExample" class="navbar-menu is-active">
     <div class="navbar-start">
-      
-      <a class="navbar-item"><strong>EN</strong></a>
-      
-      <a class="navbar-item">Home</a>
-
+      <a class="navbar-item">EN</a>
+      <a class="navbar-item" href="index.html">Home</a>
       <a class="navbar-item" href="watchlist.html">Watchlist</a>
-
       <a class="navbar-item" href="search.html">Search</a>
  </nav> 
 
@@ -45,7 +40,17 @@
     </div>
   </section>
 
-  
+  <style>
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .inputArea {
+    padding-bottom: 20px;
+  }
+</style>
+
   <section id="jumbotron">
     <div class="container is-widescreen">
         <div class="notification is primary"></div>
@@ -59,12 +64,9 @@
       <div class="box">
         <div class="box has-text-centered">
           <p class="title is-5">Calculate the time to your destination</p>
-          <div class="buttons">
+          <div class="buttons has-addons is-centered">
           <button class="button is-link">Create Watchlist</button>
-        </div>
-    </div>
-    </div>
-  </div>
+
   <div class="column" id="inputTime">
     <div class="box">
       <div class="box has-text-centered">
@@ -75,14 +77,13 @@
         <div class="buttons">
           <button id="createFromTimeInput" class="button is-link">Create Watchlist</button>
         </div>
-      </div>
+       </div>
+     </div>
     </div>
-  </div>
-</div>
 
   <div class="columns">
     <div class="column">
-      <section class="card">
+      <section class="card has-background-light">
         <header class="card-header">
           <p class="card-header-title">
             TV Search
@@ -105,7 +106,7 @@
       </section>
     </div>
     <div class="column">
-      <section class="card">
+      <section class="card has-background-light">
         <header class="card-header">
           <p class="card-header-title">
             Movie Search
@@ -123,7 +124,6 @@
       </section>
       <section class="card">
         <div class="card-content" id="movieResults">
-      
         </div>
       </section>
     </div>
@@ -131,7 +131,9 @@
 
   <!-- Watchlist preview -->
   <div class="column" id="watchListPreview"> 
-    <div class="column is-full">Your Watchlist Preview</div>
+    <div class="column is-full has-text-centered">
+      <p class="column"><strong>Your Watchlist Preview</strong></p>
+    </div>
   </div>
 
   <!-- Footer -->
