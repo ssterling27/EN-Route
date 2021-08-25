@@ -162,7 +162,7 @@ document.addEventListener('click', event => {
     // console.log(thisTripMedia)
     thisTripMedia.push(mediaInfo)
     localStorage.setItem(`trip`, JSON.stringify(trip))
-
+    event.target.parentNode.remove()
   }
 })
 
@@ -192,5 +192,6 @@ document.addEventListener('click', event => {
     // console.log(thisTripMedia)
     thisTripMedia.push(mediaInfo)
     localStorage.setItem(`trip`, JSON.stringify(trip))
+    event.target.parentNode.remove()
   }
 })

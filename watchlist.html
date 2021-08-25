@@ -15,9 +15,31 @@
       justify-content: center;
       align-items: center;
     }
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .wrap {
+      flex-wrap: wrap;
+    }
     .inputArea {
       padding-bottom: 20px;
     }
+    .currentList {
+     background-color: rgb(141, 255, 137);
+    }
+    /* .currentList:hover {
+      border: solid 2px rgb(241, 124, 45);
+      cursor: pointer;
+    } */
+    .notCurrentList {
+      background-color: rgb(250, 243, 183);
+    }
+    /* .notCurrentList:hover {
+      border: solid 4px rgb(0, 218, 247);
+      cursor: pointer;
+    } */
   </style>
 </head>
 <body>
@@ -48,13 +70,13 @@
     </div>
   </section>    
 <div id="watchListsHere"></div>
-<div class="tile"></div>
+<!-- <div class="tile"></div>
     <div class="tile is-parent">
       <article class="tile is-child notification is-warning">
           <p class="title">Trip One</p>
           <p class="subtitle">Placeholder</p>
           <div class="content">
-            <!-- Content -->
+            Content
           </div>
         </article>
       </div>
@@ -65,7 +87,7 @@
           <p class="title">Trip Two</p>
           <p class="subtitle">Placeholder</p>
           <div class="content">
-            <!-- Content -->
+            Content
           </div>
         </div>
       </article>
@@ -76,12 +98,12 @@
           <p class="title">Trip Three</p>
           <p class="subtitle">Placeholder</p>
           <div class="content">
-            <!-- Content -->
+            Content
           </div>
         </div>
       </article>
     </div>
-</div>
+</div> -->
 <footer class="footer">
   <div class="content has-text-centered">
     <p>
