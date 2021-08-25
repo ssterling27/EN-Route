@@ -59,17 +59,30 @@
   </section>
 
 <!-- Search time to destination -->
+<div class="columns">
   <div class="column" id="searchTime"> 
       <div class="box">
         <div class="box has-text-centered">
           <p class="title is-5">Calculate the time to your destination</p>
           <div class="buttons has-addons is-centered">
           <button class="button is-link">Create Watchlist</button>
-          </div>
-      </div>
+
+  <div class="column" id="inputTime">
+    <div class="box">
+      <div class="box has-text-centered">
+        <p class="title is-5">Input Travel Time Directly</p>
+        <input type="text" class="input" id="timeInput" placeholder="Time (in minutes)">
+        <input type="text" class="input" id="tripNameInput" placeholder="Trip Name">
+        <!-- <label for="timeInput" class="label">minutes</label> -->
+        <div class="buttons">
+          <button id="createFromTimeInput" class="button is-link">Create Watchlist</button>
+        </div>
+       </div>
+     </div>
+    </div>
   </div>
 
-  <div class="columns">
+<div class="columns">
     <div class="column">
       <section class="card has-background-light">
         <header class="card-header">
