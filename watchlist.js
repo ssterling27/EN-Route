@@ -19,18 +19,18 @@ trips.forEach(trip => {
     selectButton = ''
   } else {
     status = 'notCurrentList'
-    selectButton = '<button class="button is-info selectTrip">Select Trip</button>'
+    selectButton = '<button class="floater button is-info selectTrip">Select Trip</button>'
   }
   watchListElem.innerHTML = `
   <div class="tile is-parent">
       <article class="tile is-child notification ${status}" id="${i}">
         <header class="head">
           <p class="title">${tripName}</p>
-          <p>Length: ${tripTime}</p>
-          <p id="showTime${i}">Show Time: ${showTime}</p>
-          <p id="remaining${i}">Remaining Time: ${timeLeft}</p>
+          <p class="headText column">Length: ${tripTime} minutes</p>
+          <p class="headText column" id="showTime${i}">Show Time: ${showTime} minutes</p>
+          <p class="headText column" id="remaining${i}">Remaining Time: ${timeLeft} minutes</p>
           ${selectButton}
-          <button class="button is-danger deleteTrip">Delete Trip</button>
+          <button class="floater button is-danger deleteTrip">Delete Trip</button>
         </header>
           <div class="tile is-ancestor wrap" id="contentHere${i}">
             <!-- Content -->
@@ -47,7 +47,7 @@ trips.forEach(trip => {
     if (media.type == 'Show') {
       let mediaElem = document.createElement('div')
       runtime = media.episodes * media.runtime
-      mediaElem.classList = 'tile is-4 is-parent results'
+      mediaElem.classList = 'tile is-3 is-parent results'
       mediaElem.innerHTML = `
       <section class="tile is-child box" style="border: 1px solid blue;">
         <div class="card-image" id="${media.poster}">
@@ -64,9 +64,9 @@ trips.forEach(trip => {
           <p>Runtime: ${runtime} minutes</p>
           <p>${media.genre}</p>
           <p>${media.synopsis}</p>
-          <button class="button is-primary addEpisode">Add Episode</button>
-          <button class="button is-warning removeEpisode">Remove Episode</button>
-          <button class="button is-danger remove">Delete</button>
+          <button style="margin-top:10px;" class="button is-primary addEpisode">Add Episode</button>
+          <button style="margin-top:10px;" class="button is-warning removeEpisode">Remove Episode</button>
+          <button style="margin-top:10px;" class="button is-danger remove">Delete</button>
         </div>
       </section
       `
@@ -75,7 +75,7 @@ trips.forEach(trip => {
       timeLeft = timeLeft - runtime
     } else {
     let mediaElem = document.createElement('div')
-    mediaElem.classList = 'tile is-4 is-parent results'
+    mediaElem.classList = 'tile is-3 is-parent results'
     mediaElem.innerHTML = `
       <section class="tile is-child box" style="border: 1px solid blue;">
         <div class="card-image" id="${media.poster}">
@@ -91,7 +91,7 @@ trips.forEach(trip => {
           <p>Runtime: ${media.runtime} minutes</p>
           <p>${media.genre}</p>
           <p>${media.synopsis}</p>
-          <button class="button is-danger remove">Delete</button>
+          <button style="margin-top:10px;" class="button is-danger remove">Delete</button>
         </div>
       </section>
       `
@@ -105,8 +105,8 @@ trips.forEach(trip => {
   remainingText = document.getElementById(`remaining${i}`).textContent
   console.log(showText)
   console.log(remainingText)
-  document.getElementById(`showTime${i}`).textContent = `Show Time: ${showTime}`
-  document.getElementById(`remaining${i}`).textContent = `Remaining Time: ${timeLeft}`
+  document.getElementById(`showTime${i}`).textContent = `Show Time: ${showTime} minutes`
+  document.getElementById(`remaining${i}`).textContent = `Remaining Time: ${timeLeft} minutes`
   i++
 });
 

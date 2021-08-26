@@ -1,6 +1,11 @@
+let minutes = ''
+let routeTime = ''
+let route = 'route'
 
-
-
+const getMinutes = () => {
+  var a = routeTime.split(':')
+  minutes = (+a[0]) * 60 + (+a[1])
+}
 
 document.getElementById('calculateRoute').addEventListener('click', event => {
   event.preventDefault()
@@ -15,11 +20,12 @@ document.getElementById('calculateRoute').addEventListener('click', event => {
       document.getElementById('startLocation').innerHTML = ''
       document.getElementById('endLocation').innerHTML = ''
 
-      // let tripTime = trip.route.formattedTime
+      routeTime = trip.route.formattedTime
+      getMinutes()
 
       //  console.log(trip)
 
-      document.getElementById('routeTime').textContent = `${trip.route.formattedTime}`
+      document.getElementById('timeInput').value = `${minutes}`
     })
 })
 
