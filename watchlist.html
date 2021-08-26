@@ -19,6 +19,36 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+    }
+    .floater {
+      margin-top:-1.25rem; 
+    }
+    .title {
+      margin-right: 30px;
+    }
+    @media only screen and (max-width: 768px) {
+     .title {
+      display: flex;
+      width:100%;
+      justify-content: center;
+      align-items: center;
+      margin-right: 0;
+      margin-top: -.5rem;
+     }
+     .floater {
+     margin-top: 0;
+     width:100%;
+     margin-bottom: 10px;
+    }
+   .headText {
+    font-size: 1em;
+    margin-top: -5rem;
+    }
+  }
+    .headText {
+      font-size: 1.5em;
+      margin-top: -1.25rem;
     }
     .wrap {
       flex-wrap: wrap;
@@ -30,19 +60,10 @@
      background-color: rgb(141, 255, 137);
      align-items: center;
     }
-    /* .currentList:hover {
-      border: solid 2px rgb(241, 124, 45);
-      cursor: pointer;
-    } */
     .notCurrentList {
       background-color: rgb(250, 243, 183);
       align-items: center;
     }
-    /* .notCurrentList:hover {
-      border: solid 4px rgb(0, 218, 247);
-      cursor: pointer;
-    } */
-
   </style>
 </head>
 <body>
