@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>EN-Route!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"><link rel="stylesheet" href="assets/parallax.css">
+
 
   </head>
   
@@ -51,101 +52,113 @@
   }
 </style>
 
-<section id="jumbotron">
-    <div class="container is-widescreen">
-        <div class="notification is primary"></div>
-      <p class="subtitle"></p>
+<section id="parallax-1" class="hero is-large ">
+  
+  <div class="hero-body">
+    <div class="container">
+    <!-- Search time to destination -->
+      <div class="columns is-mobile is-centered">
+        <div class="column is-half" id="searchTime">
+          <div class="box has-background-light">
+            <div class="box has-text-centered">
+              <p class="title is-5">Calculate the time to your destination</p>
+              <input type="text" class="input" id="startLocation" placeholder="Starting Location">
+              <input type="text" class="input" id="endLocation" placeholder="Ending Location">
+              <div class="control inArea">
+                <p id="routeTime"></p>
+              </div>
+              <div class="buttons has-addons is-centered">
+                <button class="button is-link" id="calculateRoute">Calculate</button>
+                <section class="card" class="card-content" id="displayResults"></section>
+              </div <div class="column" id="inputTime">
+              <div class="box has-background-light">
+                <div class="box has-text-centered">
+                  <p class="title is-5">Input Travel Time Directly</p>
+                  <input type="text" class="input" id="timeInput" placeholder="Time (in minutes)">
+                  <input type="text" class="input" id="tripNameInput" placeholder="Trip Name">
+                  <!-- <label for="timeInput" class="label">minutes</label> -->
+                  <div class="buttons">
+                    <button id="createFromTimeInput" class="button is-link">Create Watchlist</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
+  </div>
+
 </section>
 
-<!-- Search time to destination -->
-<section>
-
-<div class="columns is-mobile is-centered">
-  <div class="column is-half" id="searchTime"> 
-      <div class="box has-background-light">
-        <div class="box has-text-centered">
-          <p class="title is-5">Calculate the time to your destination</p>
-            <input type="text" class="input" id="startLocation" placeholder="Starting Location">
-            <input type="text" class="input" id="endLocation" placeholder="Ending Location">
-            <div class="control inArea">
-              <p id="routeTime"></p>
+<section id="parallax-2" class="hero is-large ">
+ 
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <section class="card has-background-light">
+            <header class="card-header">
+              <p class="card-header-title">
+                TV Search
+              </p>
+            </header>
+            <div class="card-content">
+              <section class="field">
+                <!-- <label class="label" for="showSearch">Search By Show Name</label> -->
+                <div class="control inputArea">
+                  <input type="text" class="input" id="showSearch" placeholder="Search by Show Name">
+                </div>
+                <button class="button is-primary" id="searchShow">Search</button>
+              </section>
             </div>
-          <div class="buttons has-addons is-centered">
-          <button class="button is-link" id="calculateRoute">Calculate</button>
-        <section class="card" class="card-content" id="displayResults"></section>
-          </div
-  <div class="column" id="inputTime">
-      <div class="box has-background-light">
-        <div class="box has-text-centered">
-          <p class="title is-5">Input Travel Time Directly</p>
-          <input type="text" class="input" id="timeInput" placeholder="Time (in minutes)">
-          <input type="text" class="input" id="tripNameInput" placeholder="Trip Name">
-          <!-- <label for="timeInput" class="label">minutes</label> -->
-          <div class="buttons">
-            <button id="createFromTimeInput" class="button is-link">Create Watchlist</button>
-          </div>
+          </section>
+          <section class="card">
+            <div class="card-content" id="showResults">
+      
+            </div>
+          </section>
+        </div>
+        <div class="column">
+          <section class="card has-background-light">
+            <header class="card-header">
+              <p class="card-header-title">
+                Movie Search
+              </p>
+            </header>
+            <div class="card-content">
+              <section class="field">
+                <!-- <label class="label" for="showSearch">Search By Show Name</label> -->
+                <div class="control inputArea">
+                  <input type="text" class="input" id="movieSearch" placeholder="Search by Movie Name">
+                </div>
+                <button class="button is-primary" id="searchMovie">Search</button>
+              </section>
+            </div>
+          </section>
+          <section class="card">
+            <div class="card-content" id="movieResults">
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 </section>
 
-<div class="columns">
-    <div class="column">
-      <section class="card has-background-light">
-        <header class="card-header">
-          <p class="card-header-title">
-            TV Search
-          </p>
-        </header>
-        <div class="card-content">
-          <section class="field">
-            <!-- <label class="label" for="showSearch">Search By Show Name</label> -->
-            <div class="control inputArea">
-              <input type="text" class="input" id="showSearch" placeholder="Search by Show Name">
-            </div>
-            <button class="button is-primary" id="searchShow">Search</button>
-          </section>
-        </div>
-      </section>
-      <section class="card">
-        <div class="card-content" id="showResults">
-      
-        </div>
-      </section>
+<section id="parallax-3" class="hero is-large ">
+  
+  <div class="hero-body">
+    <div class="container">
+    <!-- Watchlist preview -->
+    <div class="column" id="watchListPreview">
+      <div class="column is-full has-text-centered">
+        <p class="column"><strong>Your Watchlist Preview</strong></p>
+      </div>
     </div>
-    <div class="column">
-      <section class="card has-background-light">
-        <header class="card-header">
-          <p class="card-header-title">
-            Movie Search
-          </p>
-        </header>
-        <div class="card-content">
-          <section class="field">
-            <!-- <label class="label" for="showSearch">Search By Show Name</label> -->
-            <div class="control inputArea">
-              <input type="text" class="input" id="movieSearch" placeholder="Search by Movie Name">
-            </div>
-            <button class="button is-primary" id="searchMovie">Search</button>
-          </section>
-        </div>
-      </section>
-      <section class="card">
-        <div class="card-content" id="movieResults">
-        </div>
-      </section>
-    </div>
-    </div>
-
-  <!-- Watchlist preview -->
-  <div class="column" id="watchListPreview"> 
-    <div class="column is-full has-text-centered">
-      <p class="column"><strong>Your Watchlist Preview</strong></p>
     </div>
   </div>
+
+</section>
 
   <!-- Footer -->
   <footer class="footer">
