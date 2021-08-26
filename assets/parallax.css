@@ -25,12 +25,17 @@
 }
 
 #parallax-3 {
-  background-color: paleturquoise;
+  /* background-color: paleturquoise;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  border-top: 10px solid #485fc7;
+  background: url(./moon-4270632.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-top: 10px solid #485fc7;
 }
 
 #parallax-3 hr {

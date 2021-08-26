@@ -27,6 +27,8 @@ document.getElementById('calculateRoute').addEventListener('click', event => {
 
       document.getElementById('timeInput').value = `${minutes}`
     })
+    document.getElementById('startLocation').value = ''
+    document.getElementById('endLocation').value = ''
 })
 
 
