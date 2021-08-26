@@ -1,5 +1,5 @@
-const localStorage = window.localStorage
-const savedTrip = (localStorage.getItem('savedTrip')) || ''
+
+
 
 
 document.getElementById('calculateRoute').addEventListener('click', event => {
