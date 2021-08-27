@@ -124,24 +124,28 @@
         <div class="column is-half" id="searchTime">
           <div class="box">
             <div class="box has-text-centered">
-              <p class="title is-size-3">Calculate the time to your destination</p>
+              <p class="title is-size-3 is-small-mobile">Calculate the time to your destination</p>
               <input type="text" class="input" id="startLocation" placeholder="Starting Location">
               <input type="text" class="input" id="endLocation" placeholder="Ending Location">
+              </div>
               <div class="control inArea">
                 <p id="routeTime"></p>
               </div>
-              <div class="buttons has-addons is-centered">
-                <button class="button is-link is-small-mobile" id="calculateRoute">Calculate</button>
+            <div class="buttons has-addons is-centered">
+                <button class="button is-link is-centered" id="calculateRoute">Calculate</button>
                 <section class="card" class="card-content" id="displayResults"></section>
-              </div> <div class="column" id="inputTime">
-              <div class="box has-background-light">
-                <div class="box has-text-centered">
-                  <p class="title is-size-3">Create a trip</p>
-                  <input type="text" class="input" id="timeInput" placeholder="Time (in minutes)">
-                  <input type="text" class="input" id="tripNameInput" placeholder="Trip Name">
+            </div>
+            <div class="column" id="inputTime">
+            </div>
+
+        <div class="box has-background-light">
+            <div class="box has-text-centered">
+              <p class="title is-size-3 is-small-mobile">Create a trip</p>
+                <input type="text" class="input" id="timeInput" placeholder="Time (in minutes)">
+                <input type="text" class="input" id="tripNameInput" placeholder="Trip Name">
                   <!-- <label for="timeInput" class="label">minutes</label> -->
-                  <div class="buttons is-centered">
-                    <button id="createFromTimeInput" class="button is-link is-small-mobile">Create Watchlist</button>
+                <div class="buttons has-addons is-centered">
+                  <button id="createFromTimeInput" class="button is-link is-small-mobile">Create Watchlist</button>
                   </div>
                 </div>
               </div>
@@ -215,7 +219,7 @@
     <!-- Watchlist preview -->
     <div class="column" id="watchListPreview">
       <div class="column is-full has-text-centered">
-        <p class="title has-text-primary is-size-1">My Watchlist Preview</p>
+        <p class="title has-text-primary is-size-1">Your Watchlist Preview</p>
       </div>
     </div>
     </div>
