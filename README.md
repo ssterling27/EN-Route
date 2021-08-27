@@ -8,7 +8,11 @@ How to use:
 2. Press calculate button for route time (in minutes) between starting and ending location.
 3. Press 'Create Watchlist'
 
+
+![EN-Route Demo](https://gifyu.com/image/GUQx)
+
 Future Development:
+  - Create button to search for additional show/movie(s) on saved watchlist(s).
   - Display a list of streaming services searchable through user's saved list(s)
   - Restyle all search boxes
   - Create ability to display map of selected trip(s)
