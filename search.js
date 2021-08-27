@@ -10,7 +10,7 @@ let currentTrip = (localStorage.getItem('currentTrip')) || ''
 console.log(currentTrip)
 const searchForMovie = () => {
 
-  axios.get(`http://www.omdbapi.com/?apikey=trilogy&t=${movieSearch}`)
+  axios.get(`https://www.omdbapi.com/?apikey=trilogy&t=${movieSearch}`)
     .then(res => {
       movie = res.data
       console.log(movie)
