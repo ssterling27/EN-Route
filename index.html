@@ -63,6 +63,9 @@
           font-size: 1em;
           margin-top: -5rem;
         }
+        #searchTime {
+          width: 100%;
+        }
       }
     
       .headText {
@@ -88,12 +91,8 @@
         align-items: center;
       }
     
-      @media screen and (max-width: 768px) {
-        .button.is-small-mobile {
-          border-radius: 2px;
-          font-size: .75rem
-        }
-      }
+    
+      
     </style>
 
   </head>
@@ -147,8 +146,8 @@
                 <p id="routeTime"></p>
               </div>
             <div class="buttons has-addons is-centered">
-                <button class="button is-link is-centered" id="calculateRoute">Calculate</button>
-                <div class="card card-content" id="displayResults"></div>
+                <button class="button is-link is-centered" id="calculateRoute">Calculate Trip Time</button>
+                
             </div>
             <div class="column" id="inputTime">
             </div>
