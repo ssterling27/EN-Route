@@ -10,7 +10,7 @@ let currentTrip = (localStorage.getItem('currentTrip')) || ''
 console.log(currentTrip)
 const searchForMovie = () => {
 
-  axios.get(`http://www.omdbapi.com/?apikey=trilogy&t=${movieSearch}`)
+  axios.get(`https://www.omdbapi.com/?apikey=trilogy&t=${movieSearch}`)
     .then(res => {
       movie = res.data
       console.log(movie)
@@ -94,7 +94,7 @@ if (savedMovie == '') {
   console.log('nothing here')
 } else {
   movieSearch = savedMovie
-  axios.get(`http://www.omdbapi.com/?apikey=trilogy&s=${movieSearch}&type=movie`)
+  axios.get(`https://www.omdbapi.com/?apikey=trilogy&s=${movieSearch}&type=movie`)
     .then(res => {
       results = res.data.Search
       results.forEach(result => {
@@ -125,7 +125,7 @@ document.getElementById('searchMovie').addEventListener('click', event => {
   event.preventDefault()
   removeChilds(movieResults)
   movieSearch = document.getElementById('movieSearch').value
-  axios.get(`http://www.omdbapi.com/?apikey=trilogy&s=${movieSearch}&type=movie`)
+  axios.get(`https://www.omdbapi.com/?apikey=trilogy&s=${movieSearch}&type=movie`)
     .then(res => {
       results = res.data.Search
       results.forEach(result => {
