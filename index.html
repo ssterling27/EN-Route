@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>EN-Route!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"><link rel="stylesheet" href="assets/parallax.css">
     <style>
@@ -103,8 +104,7 @@
 
 <nav class="navbar is-link" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item">
-    </a>
+    <a class="navbar-item"></a>
     <a role="button" class="navbar-burger is-active" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -118,14 +118,15 @@
       <a class="navbar-item" href="index.html">Home</a>
       <a class="navbar-item" href="watchlist.html">Watchlist</a>
       <a class="navbar-item" href="search.html">Search</a>
- </nav> 
-
-  <section class="hero is-primary">
-    <div class="hero-body">
-      <p class="title is-size-1"><strong>EN-Route</strong></p>
-      <p class="subtitle is-size-3">Never run out of time to watch your favorite movies and shows again!</p>
     </div>
-  </section>
+  </div>
+ </nav> 
+<section class="hero is-primary">
+  <div class="hero-body">
+    <p class="title is-size-1"><strong>EN-Route</strong></p>
+     <p class="subtitle is-size-3">Never run out of time to watch your favorite movies and shows again!</p>
+    </div>
+</section>
 
   
 
@@ -147,7 +148,7 @@
               </div>
             <div class="buttons has-addons is-centered">
                 <button class="button is-link is-centered" id="calculateRoute">Calculate</button>
-                <section class="card" class="card-content" id="displayResults"></section>
+                <div class="card card-content" id="displayResults"></div>
             </div>
             <div class="column" id="inputTime">
             </div>
@@ -167,11 +168,10 @@
           </div>
     </div>
   </div>
-
+  </div>
 </section>
 
 <section id="parallax-2" class="hero is-medium">
-  <p for your favorite shows & movies!</p>
   <div class="hero-body">
     <div class="container">
       <div class="columns">
