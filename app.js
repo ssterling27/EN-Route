@@ -184,7 +184,7 @@ if (currentTrip == '') {
   console.log(showText)
   console.log(remainingText)
   document.getElementById(`showTime${currentTrip}`).textContent = `Show Time: ${showTime} minutes`
-  document.getElementById(`remaining${currentTrip}`).textContent = `Remaining Time: ${timeLeft} minutes`
+  document.getElementById(`remaining${currentTrip}`).textContent = `Remaining: ${timeLeft} minutes`
 }
 
 document.addEventListener('click', event => {

@@ -83,7 +83,7 @@ trips.forEach(trip => {
             <img style="width:300px;" src="${media.poster}" alt="${media.title} Image">
           </figure>
         </div>
-        </div class="card-content">
+        </div class="card-content has-text-centered">
           <header class="card-header">
             <p class="card-header-title center">${media.title}</p>
           </header>
